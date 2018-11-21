@@ -1,0 +1,20 @@
+package rocks.zipcode;
+
+import java.io.IOException;
+
+/**
+ * @author leon on 18/11/2018.
+ */
+public class SpecialCharDocument extends Document {
+    public SpecialCharDocument(String fileName) throws IOException {
+        super(fileName);
+    }
+
+    @Override
+    public void write(String contentToBeWritten) {
+    }
+
+    private Boolean isSpecialCharacters(String s) {
+        return null;
+    }
+}
