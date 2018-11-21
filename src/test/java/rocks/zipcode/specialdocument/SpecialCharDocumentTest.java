@@ -15,7 +15,7 @@ public class SpecialCharDocumentTest {
     @Test(expected = IllegalArgumentException.class)
     public void writeNumericValuesToFile() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "123";
         Document documentWriter = new SpecialCharDocument(fileName);
 
@@ -26,7 +26,7 @@ public class SpecialCharDocumentTest {
     @Test
     public void writeSpecialCharacter1() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "()";
         Document documentWriter = new SpecialCharDocument(fileName);
 
@@ -38,7 +38,7 @@ public class SpecialCharDocumentTest {
     @Test
     public void writeSpecialCharacter2() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "()_*";
         Document documentWriter = new SpecialCharDocument(fileName);
 
@@ -50,7 +50,7 @@ public class SpecialCharDocumentTest {
     @Test(expected = IllegalArgumentException.class)
     public void writeAlphaValuesTest() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String expected = "The quick brown foxy";
         Document documentWriter = new SpecialCharDocument(fileName);
 

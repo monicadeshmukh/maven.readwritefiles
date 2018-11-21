@@ -15,7 +15,7 @@ public class NumericDocumentWriteTest {
     @Test
     public void writeNumericValuesToFile() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "123";
         Document documentWriter = new NumericCharDocument(fileName);
 
@@ -26,7 +26,7 @@ public class NumericDocumentWriteTest {
     @Test(expected = IllegalArgumentException.class)
     public void writeSpecialCharacter() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "()";
         Document documentWriter = new NumericCharDocument(fileName);
 
@@ -37,7 +37,7 @@ public class NumericDocumentWriteTest {
     @Test(expected = IllegalArgumentException.class)
     public void writeAlphaValuesTest() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String expected = "The quick brown foxy";
         Document documentWriter = new NumericCharDocument(fileName);
 

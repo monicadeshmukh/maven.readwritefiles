@@ -13,7 +13,7 @@ public class DocumentToStringTest {
     @Test
     public void toStringTest1() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "The quick brown fox";
         Document documentWriter = new Document(fileName);
         String expected = new StringBuilder(fileName)
@@ -33,7 +33,7 @@ public class DocumentToStringTest {
     @Test
     public void toStringTest2() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "The quicker browner fox";
         Document documentWriter = new Document(fileName);
         String expected = new StringBuilder(fileName)

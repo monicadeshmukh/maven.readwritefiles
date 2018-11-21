@@ -14,7 +14,7 @@ public class DocumentWriteTest {
     @Test
     public void writeAlphaValuesTest() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String expected = "The quick brown fox";
         Document documentWriter = new Document(fileName);
 
@@ -29,7 +29,7 @@ public class DocumentWriteTest {
     @Test
     public void writeSpecialCharactersTest() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String expected = "()";
         Document documentWriter = new Document(fileName);
 
@@ -44,7 +44,7 @@ public class DocumentWriteTest {
     @Test
     public void writeNumericValuesTest() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String expected = "123";
         Document documentWriter = new Document(fileName);
 

@@ -13,7 +13,7 @@ public class DocumentWriteToLineTest {
     @Test
     public void writeToLineTest1() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "The\nquick\nbrown\nfox";
         String replacement = "quicker";
         String expected = contentToBeWritten.replaceAll("quick", replacement);
@@ -31,7 +31,7 @@ public class DocumentWriteToLineTest {
     @Test
     public void writeToLineTest2() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeWritten = "The\nquick\nbrown\nfox";
         String replacement = "quickest";
         String expected = contentToBeWritten.replaceAll("The", replacement);

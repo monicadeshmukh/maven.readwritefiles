@@ -13,7 +13,7 @@ public class DocumentOverwriteTest {
     @Test
     public void writeTest1() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeOverwritten = "The quick brown fox";
         String expected = "The quick browner fox";
         Document documentWriter = new Document(fileName);
@@ -30,7 +30,7 @@ public class DocumentOverwriteTest {
     @Test
     public void writeTest2() throws IOException {
         // given
-        String fileName = "file.txt";
+        String fileName = "target/file.txt";
         String contentToBeOverwritten = "The quick brown fox";
         String expected = "The quick brownest fox";
         Document documentWriter = new Document(fileName);
