@@ -1,19 +1,29 @@
 package rocks.zipcode.document;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import rocks.zipcode.Document;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
  * @author leon on 16/11/2018.
  */
 public class DocumentWriteToLineTest {
+    private String fileName;
+
+    @Before
+    public void setup() {
+        this.fileName = "target/file.txt";
+        new File(fileName).delete();
+    }
+
+
     @Test
     public void writeToLineTest1() throws IOException {
         // given
-        String fileName = "target/file.txt";
         String contentToBeWritten = "The\nquick\nbrown\nfox";
         String replacement = "quicker";
         String expected = contentToBeWritten.replaceAll("quick", replacement);
@@ -31,7 +41,6 @@ public class DocumentWriteToLineTest {
     @Test
     public void writeToLineTest2() throws IOException {
         // given
-        String fileName = "target/file.txt";
         String contentToBeWritten = "The\nquick\nbrown\nfox";
         String replacement = "quickest";
         String expected = contentToBeWritten.replaceAll("The", replacement);

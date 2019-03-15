@@ -1,16 +1,27 @@
 package rocks.zipcode.specialdocument;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import rocks.zipcode.Document;
 import rocks.zipcode.SpecialCharDocument;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
  * @author leon on 18/11/2018.
  */
 public class SpecialCharDocumentTest {
+    private String fileName;
+
+    @Before
+    public void setup() {
+        this.fileName = "target/file.txt";
+        new File(fileName).delete();
+    }
+
+
 
     @Test(expected = IllegalArgumentException.class)
     public void writeNumericValuesToFile() throws IOException {
