@@ -1,10 +1,10 @@
-package rocks.zipcode.specialdocument;
+package com.github.curriculeon.specialdocument;
 
+import com.github.curriculeon.Document;
+import com.github.curriculeon.SpecialCharDocument;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import rocks.zipcode.Document;
-import rocks.zipcode.SpecialCharDocument;
 
 import java.io.File;
 import java.io.IOException;

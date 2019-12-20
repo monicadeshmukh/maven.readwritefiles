@@ -1,9 +1,9 @@
-package rocks.zipcode.document;
+package com.github.curriculeon.document;
 
+import com.github.curriculeon.Document;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import rocks.zipcode.Document;
 
 import java.io.File;
 import java.io.IOException;

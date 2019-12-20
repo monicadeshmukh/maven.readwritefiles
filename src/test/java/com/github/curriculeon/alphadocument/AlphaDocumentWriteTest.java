@@ -1,10 +1,10 @@
-package rocks.zipcode.numericdocument;
+package com.github.curriculeon.alphadocument;
 
+import com.github.curriculeon.AlphaCharDocument;
+import com.github.curriculeon.Document;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import rocks.zipcode.Document;
-import rocks.zipcode.NumericCharDocument;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * @author leon on 16/11/2018.
  */
-public class NumericDocumentWriteTest {
+public class AlphaDocumentWriteTest {
     private String fileName;
 
     @Before
@@ -21,13 +21,11 @@ public class NumericDocumentWriteTest {
         new File(fileName).delete();
     }
 
-
-
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void writeNumericValuesToFile() throws IOException {
         // given
         String contentToBeWritten = "123";
-        Document documentWriter = new NumericCharDocument(fileName);
+        Document documentWriter = new AlphaCharDocument(fileName);
 
         // when
         documentWriter.write(contentToBeWritten);
@@ -37,17 +35,18 @@ public class NumericDocumentWriteTest {
     public void writeSpecialCharacter() throws IOException {
         // given
         String contentToBeWritten = "()";
-        Document documentWriter = new NumericCharDocument(fileName);
+        Document documentWriter = new AlphaCharDocument(fileName);
 
         // when
         documentWriter.write(contentToBeWritten);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+
+    @Test
     public void writeAlphaValuesTest() throws IOException {
         // given
         String expected = "The quick brown foxy";
-        Document documentWriter = new NumericCharDocument(fileName);
+        Document documentWriter = new AlphaCharDocument(fileName);
 
         // when
         documentWriter.write(expected);
@@ -56,5 +55,4 @@ public class NumericDocumentWriteTest {
         // then
         Assert.assertEquals(expected, actual);
     }
-
 }

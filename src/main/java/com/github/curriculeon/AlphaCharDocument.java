@@ -1,12 +1,12 @@
-package rocks.zipcode;
+package com.github.curriculeon;
 
 import java.io.IOException;
 
 /**
  * @author leon on 16/11/2018.
  */
-public class NumericCharDocument extends Document {
-    public NumericCharDocument(String fileName) throws IOException {
+public class AlphaCharDocument extends Document {
+    public AlphaCharDocument(String fileName) throws IOException {
         super(fileName);
     }
 
@@ -14,7 +14,7 @@ public class NumericCharDocument extends Document {
     public void write(String contentToBeWritten) {
     }
 
-    private Boolean isNumeric(String s) {
+    private Boolean isAlpha(String s) {
         return null;
     }
 }

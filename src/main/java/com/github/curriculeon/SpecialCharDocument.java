@@ -1,4 +1,4 @@
-package rocks.zipcode;
+package com.github.curriculeon;
 
 import java.io.IOException;
 

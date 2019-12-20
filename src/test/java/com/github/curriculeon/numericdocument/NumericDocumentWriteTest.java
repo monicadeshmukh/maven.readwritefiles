@@ -1,10 +1,10 @@
-package rocks.zipcode.alphadocument;
+package com.github.curriculeon.numericdocument;
 
+import com.github.curriculeon.Document;
+import com.github.curriculeon.NumericCharDocument;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import rocks.zipcode.AlphaCharDocument;
-import rocks.zipcode.Document;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,7 +12,7 @@ import java.io.IOException;
 /**
  * @author leon on 16/11/2018.
  */
-public class AlphaDocumentWriteTest {
+public class NumericDocumentWriteTest {
     private String fileName;
 
     @Before
@@ -21,11 +21,13 @@ public class AlphaDocumentWriteTest {
         new File(fileName).delete();
     }
 
-    @Test(expected = IllegalArgumentException.class)
+
+
+    @Test
     public void writeNumericValuesToFile() throws IOException {
         // given
         String contentToBeWritten = "123";
-        Document documentWriter = new AlphaCharDocument(fileName);
+        Document documentWriter = new NumericCharDocument(fileName);
 
         // when
         documentWriter.write(contentToBeWritten);
@@ -35,18 +37,17 @@ public class AlphaDocumentWriteTest {
     public void writeSpecialCharacter() throws IOException {
         // given
         String contentToBeWritten = "()";
-        Document documentWriter = new AlphaCharDocument(fileName);
+        Document documentWriter = new NumericCharDocument(fileName);
 
         // when
         documentWriter.write(contentToBeWritten);
     }
 
-
-    @Test
+    @Test(expected = IllegalArgumentException.class)
     public void writeAlphaValuesTest() throws IOException {
         // given
         String expected = "The quick brown foxy";
-        Document documentWriter = new AlphaCharDocument(fileName);
+        Document documentWriter = new NumericCharDocument(fileName);
 
         // when
         documentWriter.write(expected);
@@ -55,4 +56,5 @@ public class AlphaDocumentWriteTest {
         // then
         Assert.assertEquals(expected, actual);
     }
+
 }
