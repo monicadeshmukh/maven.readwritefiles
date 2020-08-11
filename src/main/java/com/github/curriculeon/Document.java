@@ -1,6 +1,9 @@
 package com.github.curriculeon;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -21,7 +24,9 @@ public class Document implements DocumentInterface {
     }
 
     @Override
-    public void write(String contentToBeWritten) {
+    public void write(String contentToBeWritten) throws IOException {
+        this.fileWriter.write(contentToBeWritten);
+        fileWriter.flush();
     }
 
     @Override
@@ -29,13 +34,21 @@ public class Document implements DocumentInterface {
     }
 
     @Override
-    public String read(Integer lineNumber) {
-        return null;
+    public String read(Integer lineNumber) throws IOException {
+        return  null;
     }
 
     @Override
-    public String read() {
-        return null;
+    public String read() throws IOException {
+        String filePath = file.getPath();
+        //String filePath = file.getAbsolutePath();
+        // String filePath = file.getCanonicalPath();
+        Path path = Paths.get(filePath);
+        //String readFile = Files.readAllLines(path).get(0);
+        String readFile = Files.readAllLines(file.toPath()).get(0);
+
+        return readFile;
+        //return null;
     }
 
     @Override
@@ -52,11 +65,17 @@ public class Document implements DocumentInterface {
 
     @Override
     public File getFile() {
-        return null;
+        return file;
+        //return null;
     }
 
     @Override
     public String toString() {
+        try {
+            return read();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 }
